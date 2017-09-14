@@ -1,8 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const entryPoints = ["inline", "polyfills", "sw-register", "styles", "vendor", "main"];
+const entryPoints = ['inline', 'polyfills', 'sw-register', 'styles', 'vendor', 'main'];
 
-module.exports = function () {
+module.exports = function() {
   return {
     plugins: [
       /**
@@ -17,8 +17,8 @@ module.exports = function () {
        * [addons]{@link https://github.com/jantimon/html-webpack-plugin#third-party-addons}
        */
       new HtmlWebpackPlugin({
-        template: "./src\\index.html",
-        filename: "./index.html",
+        template: './src\\index.html',
+        filename: './index.html',
         hash: false,
         inject: true,
         compile: true,
@@ -26,9 +26,9 @@ module.exports = function () {
         minify: false,
         cache: true,
         showErrors: true,
-        chunks: "all",
+        chunks: 'all',
         excludeChunks: [],
-        title: "Webpack App",
+        title: 'Webpack App',
         xhtml: true,
         chunksSortMode: function sort(left, right) {
           let leftIndex = entryPoints.indexOf(left.names[0]);
@@ -40,8 +40,8 @@ module.exports = function () {
           } else {
             return 0;
           }
-        }
+        },
       }),
-    ]
-  }
-}
+    ],
+  };
+};
